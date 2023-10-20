@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj5wmfm07k8po"]
+
+[ext_resource type="Texture2D" uid="uid://o077abso7waa" path="res://Fei Mao.jpg" id="1_uundx"]
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TestBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 644.0
+texture = ExtResource("1_uundx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
