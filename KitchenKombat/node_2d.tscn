@@ -1,10 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://dj5wmfm07k8po"]
+[gd_scene load_steps=10 format=3 uid="uid://dj5wmfm07k8po"]
 
 [ext_resource type="Texture2D" uid="uid://o077abso7waa" path="res://Fei Mao.jpg" id="1_uundx"]
 [ext_resource type="Texture2D" uid="uid://trs5uk2v7gn5" path="res://StoveFrames/stoveidle-1.png.png" id="2_7r5ca"]
 [ext_resource type="Texture2D" uid="uid://drft2hk6g6dny" path="res://StoveFrames/stoveidle-2.png.png" id="3_c7yaa"]
 [ext_resource type="Texture2D" uid="uid://dw6lqjq6to7xl" path="res://StoveFrames/stoveidle-3.png.png" id="4_8ac8u"]
 [ext_resource type="Texture2D" uid="uid://d42pe71lk44m" path="res://StoveFrames/stoveidle-4.png.png" id="5_bu85s"]
+
+[sub_resource type="Theme" id="Theme_agp2d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjior"]
+bg_color = Color(0.552941, 0.615686, 0.615686, 1)
+expand_margin_bottom = 512.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycyim"]
+bg_color = Color(0.968627, 0.4, 0, 1)
+expand_margin_top = 512.0
+expand_margin_right = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2tf0"]
 animations = [{
@@ -28,25 +39,41 @@ animations = [{
 
 [node name="Battle" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.85
+anchor_bottom = 1.633
+offset_right = -0.200195
+offset_bottom = -0.184082
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TestBackground" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1156.0
-offset_bottom = 644.0
+offset_right = 2131.0
+offset_bottom = 1614.0
 texture = ExtResource("1_uundx")
 
 [node name="EnemyContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 1159.0
-offset_bottom = 1108.0
+offset_left = 1758.0
+offset_top = 515.0
+offset_right = 1917.0
+offset_bottom = 1054.0
+theme = SubResource("Theme_agp2d")
+
+[node name="ProgressBar" type="ProgressBar" parent="EnemyContainer"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_hjior")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ycyim")
+value = 50.0
+rounded = true
+fill_mode = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EnemyContainer"]
-position = Vector2(903, 847)
+position = Vector2(-287, 259)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_a2tf0")
 frame_progress = 0.222305
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(958, 543)
+zoom = Vector2(0.6, 0.6)
