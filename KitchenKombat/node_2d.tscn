@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj5wmfm07k8po"]
+[gd_scene load_steps=7 format=3 uid="uid://dj5wmfm07k8po"]
 
 [ext_resource type="Texture2D" uid="uid://o077abso7waa" path="res://Fei Mao.jpg" id="1_uundx"]
+[ext_resource type="Texture2D" uid="uid://trs5uk2v7gn5" path="res://StoveFrames/stoveidle-1.png.png" id="2_7r5ca"]
+[ext_resource type="Texture2D" uid="uid://drft2hk6g6dny" path="res://StoveFrames/stoveidle-2.png.png" id="3_c7yaa"]
+[ext_resource type="Texture2D" uid="uid://dw6lqjq6to7xl" path="res://StoveFrames/stoveidle-3.png.png" id="4_8ac8u"]
+[ext_resource type="Texture2D" uid="uid://d42pe71lk44m" path="res://StoveFrames/stoveidle-4.png.png" id="5_bu85s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2tf0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7r5ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c7yaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8ac8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bu85s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Battle" type="Control"]
 layout_mode = 3
@@ -16,11 +40,13 @@ offset_right = 1156.0
 offset_bottom = 644.0
 texture = ExtResource("1_uundx")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="EnemyContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1159.0
+offset_bottom = 1108.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TextureRect"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="EnemyContainer"]
+position = Vector2(903, 847)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_a2tf0")
+frame_progress = 0.222305
